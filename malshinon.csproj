@@ -95,6 +95,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="check_potential_agent.cs" />
+    <Compile Include="check_Potential_threat.cs" />
     <Compile Include="check_type_target.cs" />
     <Compile Include="Check_type.cs" />
     <Compile Include="Creat_cod.cs" />
