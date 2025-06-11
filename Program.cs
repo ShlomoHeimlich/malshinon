@@ -10,6 +10,8 @@ namespace malshinon
     {
         static void Main(string[] args)
         {
+            Check_Maniger check_Maniger = new Check_Maniger();
+
         }
     }
 }
