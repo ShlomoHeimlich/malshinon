@@ -24,6 +24,8 @@ public class Check_Maniger
             check_Type.Check(name_malshin);
             update_num update_reports = new update_num();
             update_reports.update_num_reports(name_malshin);
+            check_potential_agent check_potential_agent = new check_potential_agent();
+            check_potential_agent.check(name_malshin);
         }
         CreatMsg creat_Msg = new CreatMsg();
         creat_Msg.Create();
@@ -42,6 +44,7 @@ public class Check_Maniger
             Check_type_target.Check(name_molshan);
             update_num update_mentions = new update_num();
             update_mentions.update_num_mentions(name_molshan);
+            check_Potential_threat check_Potential_threat = new check_Potential_threat(name_molshan);
 
         }
         update_MSG update_MSG = new update_MSG(name_malshin,name_molshan);

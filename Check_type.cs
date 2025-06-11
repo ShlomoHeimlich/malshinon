@@ -15,7 +15,6 @@ public class Check_type
         string a = result.ToString();
         if (a == "target")
         {
-            Console.WriteLine("hi hi hi");
             string query_update = "UPDATE people SET type='molshan_and_malshin' WHERE Name=@name_malshin";
             MySqlCommand Cmd = new MySqlCommand(query_update, dal.conn);
             Cmd.Parameters.AddWithValue("@name_malshin", name_malshin);
