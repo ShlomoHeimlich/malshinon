@@ -13,12 +13,14 @@ public class Check_type_target
         cmd.Parameters.AddWithValue("@name_malshin", name_molshan);
         object result = cmd.ExecuteScalar();
         string a = result.ToString();
+       
         if (a =="malshin")
         {
             string query_update = "UPDATE people SET type='molshan_and_malshin' WHERE Name=@name_molshan";
             MySqlCommand Cmd = new MySqlCommand(query_update, dal.conn);
             Cmd.Parameters.AddWithValue("@name_molshan", name_molshan);
             int rowsAffected = Cmd.ExecuteNonQuery();
+            dal.conn.Close();
         }
 
     }

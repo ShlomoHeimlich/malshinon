@@ -9,6 +9,7 @@ public class update_num
         MySqlCommand cmd = new MySqlCommand(query, dal.conn);
         cmd.Parameters.AddWithValue("@name_malshin", name_malshin);
         int rowsAffected = cmd.ExecuteNonQuery();
+        dal.conn.Close();
     }
     public void update_num_mentions(string name_molshan)
     {
@@ -17,6 +18,7 @@ public class update_num
         MySqlCommand cmd = new MySqlCommand(query, dal.conn);
         cmd.Parameters.AddWithValue("@name_molshan",name_molshan);
         int rowsAffected = cmd.ExecuteNonQuery();
+        dal.conn.Close();
     }
 
 }

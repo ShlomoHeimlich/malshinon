@@ -12,6 +12,7 @@ class check_potential_agent
         cmd.Parameters.AddWithValue("@malshin_name", malshin_name);
         object result = cmd.ExecuteScalar();
         int num_msg = Convert.ToInt32(result);
+        dal.conn.Close();
         if (num_msg > 10)
         {
             string query_id_malshin = "SELECT id FROM people WHERE name =@malshin_name";
@@ -30,6 +31,7 @@ class check_potential_agent
                     string textMsg = reader["text_MSG"].ToString();
                     len += textMsg.Length;
                 }
+                dal.conn.Close();
             }
             if (len / num_msg > 100)
             {
@@ -37,6 +39,7 @@ class check_potential_agent
                 MySqlCommand Cmdd = new MySqlCommand(query_update, dal.conn);
                 Cmdd.Parameters.AddWithValue("@malshin_name", malshin_name);
                 int rowsAffected = Cmdd.ExecuteNonQuery();
+                dal.conn.Close();
             }
 
         }

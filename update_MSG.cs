@@ -21,6 +21,7 @@ public class update_MSG
         cmdd.Parameters.AddWithValue("@REPORTED_ID", REPORTED_ID);
         cmdd.Parameters.AddWithValue("@text_MSG", text_MSG);
         int rowsAffected = cmdd.ExecuteNonQuery();
+        dal.conn.Close();
 
 
     }
