@@ -1,4 +1,0 @@
-﻿class system_administrator
-{
-
-}
