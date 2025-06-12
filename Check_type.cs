@@ -13,13 +13,15 @@ public class Check_type
         cmd.Parameters.AddWithValue("@name_malshin", name_malshin);
         object result = cmd.ExecuteScalar();
         string a = result.ToString();
+        
         if (a == "target")
         {
             string query_update = "UPDATE people SET type='molshan_and_malshin' WHERE Name=@name_malshin";
             MySqlCommand Cmd = new MySqlCommand(query_update, dal.conn);
             Cmd.Parameters.AddWithValue("@name_malshin", name_malshin);
             int rowsAffected = Cmd.ExecuteNonQuery();
+            
         }
-
+        dal.conn.Close();
     }
 }

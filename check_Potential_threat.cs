@@ -11,12 +11,14 @@ public class check_Potential_threat
         cmd.Parameters.AddWithValue("@name_molshan", name_molshan);
         object result = cmd.ExecuteScalar();
         int num_msg = Convert.ToInt32(result);
+        dal.conn.Close();
         if (num_msg > 20)
         {
                 string query_update = "UPDATE people SET type='Potential threat' WHERE Name=@name_molshan";
                 MySqlCommand Cmdd = new MySqlCommand(query_update, dal.conn);
                 Cmdd.Parameters.AddWithValue("@name_molshan", name_molshan);
                 int rowsAffected = Cmdd.ExecuteNonQuery();
+                dal.conn.Close();
 
         }
     }

@@ -28,6 +28,9 @@ public class Creat_piple
         cmd.Parameters.AddWithValue("@num_mentions", this.num_mentions);
         cmd.Parameters.AddWithValue("@rating", this.rating);
         cmd.ExecuteNonQuery();
+        dal.conn.Close();
+
+
 
 
 

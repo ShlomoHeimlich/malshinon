@@ -1,0 +1,4 @@
+﻿class system_administrator
+{
+
+}

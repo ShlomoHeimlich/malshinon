@@ -15,6 +15,7 @@ public class Check_Maniger
         {
             var Creat_cod = new Creat_cod();
             int cod = Creat_cod.number_cod;
+            
             Creat_piple creat_Piple = new Creat_piple(name_malshin,cod,"malshin", 1, 0, 0);
             piple_malshin = true;
         }
